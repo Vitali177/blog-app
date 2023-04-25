@@ -50,7 +50,8 @@ app.post('/events', async (req, res) => {
     await axios.post('http://localhost:4005/events', {
       type: 'CommentUpdated',
       data: {
-        comment
+        ...comment,
+        postId
       }
     }).catch(err => console.log(err));
   }

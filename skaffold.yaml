@@ -1,4 +1,4 @@
-apiVersion: skaffold/v4beta3
+apiVersion: skaffold/v2alpha3
 kind: Config
 deploy:
   kubectl:
@@ -14,7 +14,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: "src/**/*.js"
             dest: .
     - image: vitali177/comments
       context: comments
@@ -22,7 +22,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: '*.js'
+          - src: "*.js"
             dest: .
     - image: vitali177/event-bus
       context: event-bus
@@ -30,15 +30,15 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: "*.js"
             dest: .
-    - image: vitali177/moderation
+    - image: vitali177/moderation-84
       context: moderation
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: "*.js"
             dest: .
     - image: vitali177/posts
       context: posts
@@ -46,7 +46,7 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: "*.js"
             dest: .
     - image: vitali177/query
       context: query
@@ -54,5 +54,5 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.js'
+          - src: "*.js"
             dest: .
